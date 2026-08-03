@@ -1,14 +1,17 @@
-export async function importData() {
-  const dados = localStorage.getItem("dados");
+import { Data } from "../../types/data.ts";
+
+export async function importData(): Promise<Data> {
+  let dados = localStorage.getItem("dados");
   if (dados !== null) {
-    const data: {} = JSON.parse(dados);
+    const data = JSON.parse(dados);
     return data;
   } else {
-    const data: {} = await fetchJSON();
-    return data;
+    const jsonData = await fetchJSON();
+    localStorage.setItem("dados", JSON.stringify(jsonData));
+    return jsonData;
   }
 }
-async function fetchJSON() {
+async function fetchJSON(): Promise<Data> {
   try {
     const response = await fetch("data.json");
     if (!response.ok) {

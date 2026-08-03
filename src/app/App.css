@@ -163,7 +163,7 @@ input {
   margin: 0 0.5rem;
 }
 
-.score {
+.voting {
   align-items: center;
   display: flex;
   background-color: hsla(239, 58%, 85%, 0.25);
