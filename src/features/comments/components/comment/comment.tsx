@@ -1,0 +1,87 @@
+import React, { useState } from "react";
+import { Comment, Comments, User } from "../../../../types/data.ts";
+import Header from "./components/header.tsx";
+import Content from "./components/content.tsx";
+import Engagement from "./components/engagement.tsx";
+import { ReplyingContainer } from "../reply-comment.tsx";
+
+function CommentRender({
+  commentsList,
+  comment,
+  setComments,
+  currentUser,
+}: {
+  commentsList: Comments;
+  comment: Comment;
+  setComments: React.Dispatch<React.SetStateAction<Comments | null>>;
+  currentUser: User;
+}) {
+  const [commentState, setCommentState] = useState<
+    "idle" | "replying" | "editing"
+  >("idle");
+  return (
+    <>
+      <div className="body">
+        <div className="main">
+          <div className="header">
+            <Header user={comment.user} createdAt={comment.createdAt} />
+          </div>
+          <div className="content">
+            <Content
+              replyingTo={comment.replyingTo}
+              content={comment.content}
+            />
+          </div>
+        </div>
+        <div className="engagement">
+          <Engagement
+            score={comment.score}
+            user={comment.user}
+            setCommentState={setCommentState}
+          />
+        </div>
+      </div>
+      {commentState === "replying" && (
+        <ReplyingContainer
+          commentsList={commentsList}
+          comment={comment}
+          setReplying={setCommentState}
+          setComments={setComments}
+          currentUser={currentUser}
+        />
+      )}
+      <RepliesRender
+        commentsList={commentsList}
+        replies={comment.replies}
+        setComments={setComments}
+        currentUser={currentUser}
+      />
+    </>
+  );
+}
+function RepliesRender({
+  commentsList,
+  replies,
+  setComments,
+  currentUser,
+}: {
+  commentsList: Comments;
+  replies: Comments | undefined;
+  setComments: React.Dispatch<React.SetStateAction<Comments | null>>;
+  currentUser: User;
+}) {
+  if (replies !== undefined) {
+    const repliesLoad = replies.map((reply: Comment) => {
+      return (
+        <CommentRender
+          commentsList={commentsList}
+          comment={reply}
+          setComments={setComments}
+          currentUser={currentUser}
+        />
+      );
+    });
+    return <section className="repliesArea">{repliesLoad}</section>;
+  }
+}
+export default CommentRender;
