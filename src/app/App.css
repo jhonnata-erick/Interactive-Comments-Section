@@ -42,7 +42,7 @@ input {
   color: hsl(211, 10%, 45%);
 }
 
-.item {
+.body {
   display: flex;
   flex-direction: column;
   background-color: hsl(0, 100%, 100%);
@@ -79,31 +79,26 @@ input {
   align-items: center;
 }
 
-.commentAccountInfo {
+.comment-author {
   display: flex;
   align-items: center;
   position: relative;
+  gap: 8px;
 }
 
-.commentFunctions {
+.user-actions {
   display: flex;
   margin-left: auto;
   align-items: center;
 }
 
-.commentRodape {
+.engagement {
   margin-top: 1rem;
   display: flex;
 }
-
-.commentText {
-  margin-top: 1rem;
-}
-
-.username {
+.author-username {
   color: hsl(212, 24%, 26%);
   font-weight: 500;
-  margin: 0 1rem;
 }
 
 .createdAt {
@@ -140,7 +135,6 @@ input {
   align-items: center;
   display: flex;
   font-weight: 500;
-  margin-right: 1rem;
 }
 
 .deleteComment {
@@ -187,15 +181,17 @@ input {
 .downVoted {
   background-color: rgba(255, 0, 0, 0.307);
 }
-.update,
-.sendComment {
+.confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: hsl(223, 19%, 93%);
   background-color: hsl(238, 40%, 52%);
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   transition: 80ms ease-in-out;
 }
-.sendComment:hover {
+.confirm:hover {
   filter: opacity(0.5);
 }
 .deleteWindow {
@@ -303,4 +299,11 @@ input {
     width: 100%;
     box-sizing: border-box;
   }
+}
+
+/*============*/
+.replying-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }

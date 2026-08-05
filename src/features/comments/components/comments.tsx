@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
 import { CommentsList } from "./comments-list.tsx";
 import { CreateComment } from "./create-comment.tsx";
-import { Comments, Data } from "../../../types/data.ts";
+import { Comments, Data, User } from "../../../types/data.ts";
 import { data } from "../api/index.ts";
 
 function CommentsPage() {
   const [commentsList, setComments] = useState<Comments | null>(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   useEffect(() => {
     let active = true;
     data.then((response) => {
       if (active) {
         setComments(response.comments);
+        setCurrentUser(response.currentUser);
       }
     });
     return () => {
       active = false;
     };
   }, []);
+  useEffect(() => {
+    console.log(commentsList);
+  }, [commentsList]);
   return (
     <section className="comments-feature">
-      {commentsList !== null && <CommentsList commentsList={commentsList} />}
+      {commentsList && currentUser && (
+        <CommentsList
+          commentsList={commentsList}
+          setComments={setComments}
+          currentUser={currentUser}
+        />
+      )}
       <CreateComment />
     </section>
   );
