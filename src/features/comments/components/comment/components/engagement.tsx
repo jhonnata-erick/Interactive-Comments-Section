@@ -6,14 +6,16 @@ import { DeleteComment } from "../../delete-comment.tsx";
 import { ReplyComment } from "../../reply-comment.tsx";
 
 function Engagement({
+  commentState,
   score,
   user,
   setCommentState,
 }: {
+  commentState: string;
   score: number;
   user: User;
   setCommentState: React.Dispatch<
-    React.SetStateAction<"idle" | "replying" | "editing">
+    React.SetStateAction<"idle" | "replying" | "editing" | "deleting">
   >;
 }) {
   return (
@@ -27,17 +29,23 @@ function Engagement({
           <img className="scoreButtons" src="images/icon-minus.svg" />
         </button>
       </div>
-      <UserActions user={user} setReplying={setCommentState} />
+      <UserActions
+        user={user}
+        setCommentState={setCommentState}
+        commentState={commentState}
+      />
     </>
   );
 }
 function UserActions({
   user,
-  setReplying,
+  setCommentState,
+  commentState,
 }: {
+  commentState: string;
   user: User;
-  setReplying: React.Dispatch<
-    React.SetStateAction<"idle" | "replying" | "editing">
+  setCommentState: React.Dispatch<
+    React.SetStateAction<"idle" | "replying" | "editing" | "deleting">
   >;
 }) {
   const [currentUsername, setCurrentUsername] = useState<string | null>(null);
@@ -60,13 +68,16 @@ function UserActions({
     <div className="user-actions">
       {currentUsername && user.username === currentUsername && (
         <>
-          <EditComment />
-          <DeleteComment />
+          <EditComment
+            setEditing={setCommentState}
+            commentState={commentState}
+          />
+          <DeleteComment setDeleting={setCommentState} />
         </>
       )}
       {user.username !== currentUsername && (
         <>
-          <ReplyComment setReplying={setReplying} />
+          <ReplyComment setReplying={setCommentState} />
         </>
       )}
     </div>

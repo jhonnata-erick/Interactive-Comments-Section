@@ -7,14 +7,15 @@ function Content({
   replyingTo: string | undefined;
   content: string;
 }) {
-  const [editing, isEditing] = useState();
   return (
-    <p className="content">
-      {replyingTo !== undefined && (
-        <span className="replyingTo">@{replyingTo} </span>
-      )}
-      {content}
-    </p>
+    <div className="content">
+      <p className="content">
+        {replyingTo !== undefined && (
+          <span className="replyingTo">@{replyingTo} </span>
+        )}
+        {content}
+      </p>
+    </div>
   );
 }
 export default Content;

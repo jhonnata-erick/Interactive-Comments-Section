@@ -37,6 +37,14 @@ input {
   padding-left: 1rem;
   box-sizing: border-box;
 }
+textarea {
+  border: 2px solid hsl(223, 19%, 93%);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
 
 .content {
   color: hsl(211, 10%, 45%);
@@ -170,7 +178,6 @@ input {
   justify-content: space-evenly;
   max-height: fit-content;
 }
-
 .scoreButtons {
   width: 0.75rem;
 }
@@ -194,24 +201,25 @@ input {
 .confirm:hover {
   filter: opacity(0.5);
 }
-.deleteWindow {
+.modal-comment-delete {
   display: block;
   position: fixed;
   top: 33%;
+  justify-self: center;
   box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.504);
 }
 
-.deleteWindow h2 {
+.modal-comment-delete h2 {
   color: hsl(212, 24%, 26%);
   display: block;
 }
 
-.deleteWindow p {
+.modal-comment-delete p {
   color: hsl(211, 10%, 45%);
   display: block;
 }
 
-.deleteWindow button {
+.modal-comment-delete button {
   color: hsl(223, 19%, 93%);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -246,7 +254,7 @@ input {
   width: 100%;
   box-sizing: border-box;
 }
-@media (min-width: 740px) {
+@media (max-width: 740px) {
   img {
     width: 2.5rem;
   }
@@ -283,7 +291,7 @@ input {
   .commentRodape {
     margin-right: 1rem;
   }
-  .score {
+  .voting {
     flex-wrap: wrap;
     width: min-content;
     min-height: 67px;

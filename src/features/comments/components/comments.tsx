@@ -20,18 +20,25 @@ function CommentsPage() {
     };
   }, []);
   useEffect(() => {
-    console.log(commentsList);
+    const dados = { ["currentUser"]: currentUser, ["comments"]: commentsList };
+    localStorage.setItem("dados", JSON.stringify(dados));
   }, [commentsList]);
   return (
     <section className="comments-feature">
       {commentsList && currentUser && (
-        <CommentsList
-          commentsList={commentsList}
-          setComments={setComments}
-          currentUser={currentUser}
-        />
+        <>
+          <CommentsList
+            commentsList={commentsList}
+            setComments={setComments}
+            currentUser={currentUser}
+          />
+          <CreateComment
+            commentsList={commentsList}
+            setComments={setComments}
+            currentUser={currentUser}
+          />
+        </>
       )}
-      <CreateComment />
     </section>
   );
 }

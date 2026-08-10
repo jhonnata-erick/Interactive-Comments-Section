@@ -4,6 +4,8 @@ import Header from "./components/header.tsx";
 import Content from "./components/content.tsx";
 import Engagement from "./components/engagement.tsx";
 import { ReplyingContainer } from "../reply-comment.tsx";
+import { EditingContainer } from "../edit-comment.tsx";
+import { DeleteModal } from "../delete-comment.tsx";
 
 function CommentRender({
   commentsList,
@@ -17,7 +19,7 @@ function CommentRender({
   currentUser: User;
 }) {
   const [commentState, setCommentState] = useState<
-    "idle" | "replying" | "editing"
+    "idle" | "replying" | "editing" | "deleting"
   >("idle");
   return (
     <>
@@ -26,15 +28,24 @@ function CommentRender({
           <div className="header">
             <Header user={comment.user} createdAt={comment.createdAt} />
           </div>
-          <div className="content">
+          {commentState === "editing" && (
+            <EditingContainer
+              comment={comment}
+              setComments={setComments}
+              commentsList={commentsList}
+              setEditing={setCommentState}
+            />
+          )}
+          {commentState !== "editing" && (
             <Content
               replyingTo={comment.replyingTo}
               content={comment.content}
             />
-          </div>
+          )}
         </div>
         <div className="engagement">
           <Engagement
+            commentState={commentState}
             score={comment.score}
             user={comment.user}
             setCommentState={setCommentState}
@@ -56,6 +67,14 @@ function CommentRender({
         setComments={setComments}
         currentUser={currentUser}
       />
+      {commentState === "deleting" && (
+        <DeleteModal
+          comment={comment}
+          setComments={setComments}
+          commentsList={commentsList}
+          setDeleting={setCommentState}
+        />
+      )}
     </>
   );
 }

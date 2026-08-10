@@ -6,7 +6,7 @@ export function ReplyComment({
   setReplying,
 }: {
   setReplying: React.Dispatch<
-    React.SetStateAction<"idle" | "replying" | "editing">
+    React.SetStateAction<"idle" | "replying" | "editing" | "deleting">
   >;
 }) {
   return (
@@ -26,7 +26,7 @@ export function ReplyingContainer({
   commentsList: Comments;
   comment: Comment;
   setReplying: React.Dispatch<
-    React.SetStateAction<"idle" | "replying" | "editing">
+    React.SetStateAction<"idle" | "replying" | "editing" | "deleting">
   >;
   setComments: React.Dispatch<React.SetStateAction<Comments | null>>;
   currentUser: User;
