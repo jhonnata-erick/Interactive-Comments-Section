@@ -1,6 +1,6 @@
 {
   "currentUser": {
-    "image": { 
+    "image": {
       "png": "./images/avatars/image-juliusomo.png",
       "webp": "./images/avatars/image-juliusomo.webp"
     },
@@ -13,7 +13,7 @@
       "createdAt": "1 month ago",
       "score": 12,
       "user": {
-        "image": { 
+        "image": {
           "png": "./images/avatars/image-amyrobson.png",
           "webp": "./images/avatars/image-amyrobson.webp"
         },
@@ -27,7 +27,7 @@
       "createdAt": "2 weeks ago",
       "score": 5,
       "user": {
-        "image": { 
+        "image": {
           "png": "./images/avatars/image-maxblagun.png",
           "webp": "./images/avatars/image-maxblagun.webp"
         },
@@ -41,7 +41,7 @@
           "score": 4,
           "replyingTo": "maxblagun",
           "user": {
-            "image": { 
+            "image": {
               "png": "./images/avatars/image-ramsesmiron.png",
               "webp": "./images/avatars/image-ramsesmiron.webp"
             },
@@ -55,7 +55,7 @@
           "score": 2,
           "replyingTo": "ramsesmiron",
           "user": {
-            "image": { 
+            "image": {
               "png": "./images/avatars/image-juliusomo.png",
               "webp": "./images/avatars/image-juliusomo.webp"
             },
@@ -63,6 +63,462 @@
           }
         }
       ]
+    },
+    {
+      "id": 5,
+      "content": "Great work on the accessibility! I checked it with a screen reader and the semantic HTML is spot on. Did you use any specific testing tool or just manual checks?",
+      "createdAt": "3 days ago",
+      "score": 9,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-sarahdev.png",
+          "webp": "./images/avatars/image-sarahdev.webp"
+        },
+        "username": "sarahdev"
+      },
+      "replies": [
+        {
+          "id": 6,
+          "content": "Thanks Sarah! I mostly used Axe DevTools and did some manual keyboard navigation. Glad to hear it works well with screen readers!",
+          "createdAt": "1 day ago",
+          "score": 3,
+          "replyingTo": "sarahdev",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "content": "This is honestly one of the best submissions for this challenge I've seen so far. The dark mode toggle is incredibly smooth. What did you use for the state management? Context API or Redux?",
+      "createdAt": "5 days ago",
+      "score": 18,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-alexcode.png",
+          "webp": "./images/avatars/image-alexcode.webp"
+        },
+        "username": "alexcode"
+      },
+      "replies": [
+        {
+          "id": 8,
+          "content": "Hey Alex! I went with simple Context API for this one since the state isn't too complex. Redux felt like a bit of overkill for just the theme and a few user inputs.",
+          "createdAt": "4 days ago",
+          "score": 7,
+          "replyingTo": "alexcode",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
+          "id": 9,
+          "content": "Smart move. Keep it simple until complexity requires otherwise. Good job!",
+          "createdAt": "2 days ago",
+          "score": 1,
+          "replyingTo": "juliusomo",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-alexcode.png",
+              "webp": "./images/avatars/image-alexcode.webp"
+            },
+            "username": "alexcode"
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "content": "I noticed a small bug on mobile screens. When opening the menu overlay, you can still scroll the background content. Setting `overflow: hidden` on the body when the menu is active should fix it!",
+      "createdAt": "12 hours ago",
+      "score": 6,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-elenab.png",
+          "webp": "./images/avatars/image-elenab.webp"
+        },
+        "username": "elenab"
+      },
+      "replies": []
+    },
+    {
+      "id": 11,
+      "content": "Wow, love the custom animations on the hover states! It adds a really premium feel to the overall UX. Keep up the amazing work!",
+      "createdAt": "2 hours ago",
+      "score": 2,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-lucasdesign.png",
+          "webp": "./images/avatars/image-lucasdesign.webp"
+        },
+        "username": "lucasdesign"
+      },
+      "replies": []
+    },
+    {
+      "id": 12,
+      "content": "Did you use Tailwind CSS or standard styled-components for this? The layouts look pixel-perfect compared to the original design files.",
+      "createdAt": "3 weeks ago",
+      "score": 14,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-davidk.png",
+          "webp": "./images/avatars/image-davidk.webp"
+        },
+        "username": "davidk"
+      },
+      "replies": [
+        {
+          "id": 13,
+          "content": "Thanks David! I actually went with Tailwind CSS. It speeded up my workflow immensely for the layout grids and spacing utilities.",
+          "createdAt": "2 weeks ago",
+          "score": 5,
+          "replyingTo": "davidk",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "content": "The codebase is super clean on GitHub. Your folder structure for components is very logical. Definitely taking notes for my next project!",
+      "createdAt": "6 days ago",
+      "score": 8,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-claram.png",
+          "webp": "./images/avatars/image-claram.webp"
+        },
+        "username": "claram"
+      },
+      "replies": []
+    },
+    {
+      "id": 15,
+      "content": "Quick question: how did you handle data persistence? If I refresh the page, do the comments stay saved, or does it reset to the default state?",
+      "createdAt": "5 days ago",
+      "score": 3,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-tomasp.png",
+          "webp": "./images/avatars/image-tomasp.webp"
+        },
+        "username": "tomasp"
+      },
+      "replies": [
+        {
+          "id": 16,
+          "content": "I connected it to localStorage! It saves the state stringified, so any edits, new comments, or vote scores will persist after refreshing.",
+          "createdAt": "4 days ago",
+          "score": 6,
+          "replyingTo": "tomasp",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        },
+        {
+          "id": 17,
+          "content": "Awesome, localStorage is perfect for a frontend-only mockup like this. Appreciate the fast reply!",
+          "createdAt": "4 days ago",
+          "score": 2,
+          "replyingTo": "juliusomo",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-tomasp.png",
+              "webp": "./images/avatars/image-tomasp.webp"
+            },
+            "username": "tomasp"
+          }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "content": "The upvote and downvote counters are slick, but you should prevent users from voting multiple times on the same item. Right now I can spam the vote button.",
+      "createdAt": "4 days ago",
+      "score": -1,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-nitpicker.png",
+          "webp": "./images/avatars/image-nitpicker.webp"
+        },
+        "username": "nitpicker"
+      },
+      "replies": [
+        {
+          "id": 19,
+          "content": "Good catch! I need to track array of voted comment IDs in the user profile state to restrict it to just 1 vote per comment. Will update soon.",
+          "createdAt": "3 days ago",
+          "score": 4,
+          "replyingTo": "nitpicker",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "content": "This inspired me to finally finish my own frontend mentor challenge. Incredible work!",
+      "createdAt": "3 days ago",
+      "score": 11,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-sophief.png",
+          "webp": "./images/avatars/image-sophief.webp"
+        },
+        "username": "sophief"
+      },
+      "replies": []
+    },
+    {
+      "id": 21,
+      "content": "Are you planning on adding a backend service next? This would make a killer full-stack application with Node.js and MongoDB.",
+      "createdAt": "2 days ago",
+      "score": 5,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-backendguy.png",
+          "webp": "./images/avatars/image-backendguy.webp"
+        },
+        "username": "backendguy"
+      },
+      "replies": []
+    },
+    {
+      "id": 22,
+      "content": "Hey everyone, I am having trouble getting my reply boxes to dynamic height adjust like this one. Any tips on pure CSS solutions for textarea resizing?",
+      "createdAt": "1 day ago",
+      "score": 2,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-codenewbie.png",
+          "webp": "./images/avatars/image-codenewbie.webp"
+        },
+        "username": "codenewbie"
+      },
+      "replies": [
+        {
+          "id": 23,
+          "content": "You can try using the CSS property `field-sizing: content;` if you are targeting modern browsers. It auto-resizes form elements beautifully without JS!",
+          "createdAt": "18 hours ago",
+          "score": 7,
+          "replyingTo": "codenewbie",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-ramsesmiron.png",
+              "webp": "./images/avatars/image-ramsesmiron.webp"
+            },
+            "username": "ramsesmiron"
+          }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "content": "Beautiful UI! The font choices match perfectly. Did you use Google Fonts or local self-hosted files?",
+      "createdAt": "20 hours ago",
+      "score": 1,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-designgal.png",
+          "webp": "./images/avatars/image-designgal.webp"
+        },
+        "username": "designgal"
+      },
+      "replies": []
+    },
+    {
+      "id": 25,
+      "content": "Just checked the console, no errors or warnings whatsoever. That's what I call clean implementation. Kudos!",
+      "createdAt": "15 hours ago",
+      "score": 4,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-qa_tester.png",
+          "webp": "./images/avatars/image-qa_tester.webp"
+        },
+        "username": "qa_tester"
+      },
+      "replies": []
+    },
+    {
+      "id": 26,
+      "content": "Can you explain how you handled the modal pop-up confirmation when deleting a comment? Did you use a React portal?",
+      "createdAt": "10 hours ago",
+      "score": 3,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-marcusl.png",
+          "webp": "./images/avatars/image-marcusl.webp"
+        },
+        "username": "marcusl"
+      },
+      "replies": [
+        {
+          "id": 27,
+          "content": "Yes, exactly! I used `createPortal` to mount the deletion warning modal outside the main DOM hierarchy hierarchy to avoid layout z-index nesting bugs.",
+          "createdAt": "8 hours ago",
+          "score": 5,
+          "replyingTo": "marcusl",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "content": "Simple, elegant, and fully functional. 10/10 execution.",
+      "createdAt": "7 hours ago",
+      "score": 8,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-reviewer.png",
+          "webp": "./images/avatars/image-reviewer.webp"
+        },
+        "username": "reviewer"
+      },
+      "replies": []
+    },
+    {
+      "id": 29,
+      "content": "I like how the 'You' badge displays next to your own comments. Small UX details like that make apps feel complete.",
+      "createdAt": "5 hours ago",
+      "score": 6,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-uxguru.png",
+          "webp": "./images/avatars/image-uxguru.webp"
+        },
+        "username": "uxguru"
+      },
+      "replies": []
+    },
+    {
+      "id": 30,
+      "content": "Is this project deployable on Vercel or Netlify? Would love a live URL link to click around on my phone directly.",
+      "createdAt": "4 hours ago",
+      "score": 2,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-tester2.png",
+          "webp": "./images/avatars/image-tester2.webp"
+        },
+        "username": "tester2"
+      },
+      "replies": []
+    },
+    {
+      "id": 31,
+      "content": "The timestamps (like '2 days ago') - are they hardcoded in your JSON mockup data, or did you integrate a library like date-fns / dayjs to calculate them dynamically?",
+      "createdAt": "3 hours ago",
+      "score": 4,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-timekeeper.png",
+          "webp": "./images/avatars/image-timekeeper.webp"
+        },
+        "username": "timekeeper"
+      },
+      "replies": [
+        {
+          "id": 32,
+          "content": "Right now they are just mock strings loaded straight from the initial JSON state file. If I expand this, I'll definitely swap to real ISO timestamps parsed by dayjs.",
+          "createdAt": "2 hours ago",
+          "score": 3,
+          "replyingTo": "timekeeper",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-juliusomo.png",
+              "webp": "./images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+          }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "content": "I noticed the layout uses Flexbox for row alignments. Grid could have kept your CSS slightly cleaner on the action buttons containers.",
+      "createdAt": "1 hour ago",
+      "score": 0,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-csswizard.png",
+          "webp": "./images/avatars/image-csswizard.webp"
+        },
+        "username": "csswizard"
+      },
+      "replies": []
+    },
+    {
+      "id": 34,
+      "content": "Bookmarking this for my weekend practice. Solid architectural template to learn from.",
+      "createdAt": "45 mins ago",
+      "score": 3,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-studious.png",
+          "webp": "./images/avatars/image-studious.webp"
+        },
+        "username": "studious"
+      },
+      "replies": []
+    },
+    {
+      "id": 35,
+      "content": "Are you planning on supporting markdown parsing inside the comment input boxes eventually?",
+      "createdAt": "20 mins ago",
+      "score": 1,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-markdownfan.png",
+          "webp": "./images/avatars/image-markdownfan.webp"
+        },
+        "username": "markdownfan"
+      },
+      "replies": []
+    },
+    {
+      "id": 36,
+      "content": "Just found this repository today. Really outstanding work! The transitions are buttery smooth on Safari desktop too.",
+      "createdAt": "5 mins ago",
+      "score": 2,
+      "user": {
+        "image": {
+          "png": "./images/avatars/image-appleuser.png",
+          "webp": "./images/avatars/image-appleuser.webp"
+        },
+        "username": "appleuser"
+      },
+      "replies": []
     }
   ]
 }
