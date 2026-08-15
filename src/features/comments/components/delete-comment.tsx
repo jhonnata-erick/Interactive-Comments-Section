@@ -1,4 +1,5 @@
 import { Comment, Comments } from "../../../types/data.ts";
+import { deleteComment } from "../utils/deleteComment.ts";
 
 export function DeleteComment({
   setDeleting,
@@ -49,27 +50,7 @@ export function DeleteModal({
         </button>
         <button
           onClick={() => {
-            setComments(
-              commentsList
-                .map((c) => {
-                  if (
-                    c.replies !== undefined &&
-                    c.replies.some((r) => r.id === comment.id) &&
-                    comment.replyingTo !== undefined
-                  ) {
-                    const newreplies = c.replies.filter(
-                      (r) => r.id !== comment.id,
-                    );
-                    c.replies = newreplies;
-                    return c;
-                  } else if (c.id === comment.id) {
-                    return;
-                  } else {
-                    return c;
-                  }
-                })
-                .filter((c) => c !== undefined),
-            );
+            setComments(deleteComment(comment, commentsList));
           }}
           className="delete"
         >
