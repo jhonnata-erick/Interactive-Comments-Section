@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Comment, Comments, User } from "../../../types/data.ts";
-import { data } from "../api/index.ts";
+import { addReply } from "../utils/addReply.ts";
 
 export function ReplyComment({
   setReplying,
@@ -44,47 +44,7 @@ export function ReplyingContainer({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (comment.replyingTo === undefined && replyForm.content !== "") {
-            const indexC = commentsList.findIndex((c) => c.id === comment.id);
-            setComments(
-              commentsList.map((c) => {
-                if (c.id === comment.id && comment.replies) {
-                  const updComment = {
-                    ...comment,
-                    ["replies"]: [...comment.replies, replyForm],
-                  };
-                  return updComment;
-                } else {
-                  return c;
-                }
-              }),
-            );
-          } else if (
-            comment.replyingTo !== undefined &&
-            replyForm.content !== ""
-          ) {
-            const indexC = commentsList.findIndex((c) =>
-              c.replies?.some((r) => r.id === comment.id),
-            );
-            setComments(
-              commentsList.map((c) => {
-                if (
-                  commentsList[indexC] &&
-                  commentsList[indexC].replies &&
-                  c.replies?.some((r) => r.id === comment.id)
-                ) {
-                  const updComment = {
-                    ...commentsList[indexC],
-                    ["replies"]: [...commentsList[indexC].replies, replyForm],
-                  };
-                  return updComment;
-                } else {
-                  return c;
-                }
-              }),
-            );
-          }
-          setReplying("idle");
+          setComments(addReply(comment, replyForm, commentsList));
         }}
         className="replying-container"
       >
