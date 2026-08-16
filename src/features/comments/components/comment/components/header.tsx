@@ -10,17 +10,15 @@ function Header({
   createdAt: string;
   currentUser: User;
 }) {
-  const [isCurrentUser, setIsCurrentUser] = useState(false);
-  if (currentUser.username === user.username) {
-    setIsCurrentUser(true);
-  }
   return (
     <div className="comment-author">
       <div className="author-photo">
         <img src={user.image.webp} />
       </div>
       <div className="author-username">{user.username}</div>
-      {isCurrentUser && <div className="isCurrentUser">you</div>}
+      {currentUser.username === user.username && (
+        <div className="isCurrentUser">you</div>
+      )}
       <div className="createdAt">
         <p>{createdAt}</p>
       </div>
