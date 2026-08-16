@@ -45,6 +45,7 @@ export function ReplyingContainer({
         onSubmit={(e) => {
           e.preventDefault();
           setComments(addReply(comment, replyForm, commentsList));
+          setReplying("idle");
         }}
         className="replying-container"
       >
