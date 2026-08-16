@@ -26,7 +26,11 @@ function CommentRender({
       <div className="body">
         <div className="main">
           <div className="header">
-            <Header user={comment.user} createdAt={comment.createdAt} />
+            <Header
+              user={comment.user}
+              createdAt={comment.createdAt}
+              currentUser={currentUser}
+            />
           </div>
           {commentState === "editing" && (
             <EditingContainer
@@ -46,9 +50,11 @@ function CommentRender({
         <div className="engagement">
           <Engagement
             commentState={commentState}
-            score={comment.score}
-            user={comment.user}
             setCommentState={setCommentState}
+            currentUser={currentUser}
+            comment={comment}
+            commentsList={commentsList}
+            setComments={setComments}
           />
         </div>
       </div>
