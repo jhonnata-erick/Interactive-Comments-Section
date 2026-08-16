@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Comments, User } from "../../../types/data.ts";
+import { addComment } from "../utils/addComment.ts";
 
 export function CreateComment({
   commentsList,
@@ -24,22 +25,15 @@ export function CreateComment({
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setComments([...commentsList, newComment]);
-            setNewComment({
-              ...newComment,
-              ["content"]: "",
-            });
+            addComment(commentsList, newComment, setComments);
           }}
           className="commentForm"
         >
           <input
             onChange={(e) => {
-              const date = new Date().toISOString();
               setNewComment({
                 ...newComment,
                 ["content"]: e.target.value.trim(),
-                ["id"]: Date.now(),
-                ["createdAt"]: date,
               });
             }}
             id="comment-input"
