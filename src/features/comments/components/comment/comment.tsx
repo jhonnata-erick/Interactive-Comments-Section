@@ -67,12 +67,14 @@ function CommentRender({
           currentUser={currentUser}
         />
       )}
-      <RepliesRender
-        commentsList={commentsList}
-        replies={comment.replies}
-        setComments={setComments}
-        currentUser={currentUser}
-      />
+      {comment.replies?.length! > 0 && (
+        <RepliesRender
+          commentsList={commentsList}
+          replies={comment.replies}
+          setComments={setComments}
+          currentUser={currentUser}
+        />
+      )}
       {commentState === "deleting" && (
         <DeleteModal
           comment={comment}

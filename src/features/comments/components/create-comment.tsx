@@ -29,6 +29,7 @@ export function CreateComment({
           }}
           className="commentForm"
         >
+          <img src={currentUser.image.webp} />
           <input
             onChange={(e) => {
               setNewComment({
@@ -42,7 +43,7 @@ export function CreateComment({
             placeholder="Add a comment..."
             value={newComment.content}
           />
-          <img src={currentUser.image.webp} />
+
           <button type="submit" className="confirm">
             SEND
           </button>

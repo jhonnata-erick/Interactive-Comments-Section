@@ -23,6 +23,7 @@ export function EditComment({
       className="edit"
     >
       <img src="images/icon-edit.svg" alt="" />
+      <p>Edit</p>
     </button>
   );
 }

@@ -16,6 +16,7 @@ export function DeleteComment({
       className="deleteComment"
     >
       <img src="images/icon-delete.svg" alt="" />
+      <p>Delete</p>
     </button>
   );
 }
