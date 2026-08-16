@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Comments, Comment } from "../../../types/data.ts";
+import { editComment } from "../utils/editComment.ts";
 
 export function EditComment({
   setEditing,
@@ -38,33 +39,18 @@ export function EditingContainer({
     React.SetStateAction<"idle" | "replying" | "editing" | "deleting">
   >;
 }) {
-  const [editData, setFormData] = useState(comment.content);
+  const [newContent, setFormData] = useState(comment.content);
   return (
     <div className="editing-container">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const content = editData.trim();
-          setComments(
-            commentsList.map((c) => {
-              if (c.id === comment.id) {
-                c.content = content;
-                return c;
-              } else if (c.replies) {
-                c.replies = c.replies.map((r) => {
-                  if (r.id === comment.id) {
-                    r.content = content;
-                    return r;
-                  } else {
-                    return r;
-                  }
-                });
-                return c;
-              } else {
-                return c;
-              }
-            }),
+          const newCommentsList = editComment(
+            comment,
+            commentsList,
+            newContent,
           );
+          setComments(newCommentsList);
           setEditing("idle");
         }}
       >
@@ -72,7 +58,7 @@ export function EditingContainer({
           onChange={(e) => {
             setFormData(e.target.value);
           }}
-          value={editData}
+          value={newContent.trim()}
         />
         <button type="submit" className="confirm">
           UPDATE
